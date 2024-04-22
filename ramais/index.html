@@ -40,7 +40,7 @@
           <div>
             <button
               class="btn py-2 px-3 rounded-lg"
-              onclick="window.open('https://drive.google.com/file/d/1KEuLxtrW9Apn1p5n6Gr4dn9oYhfJYQU2/view?usp=drive_link')"
+              onclick="opening()"
             >
               <span class="mdi mdi-download"></span>
               download
@@ -51,7 +51,10 @@
           <div class="d-flex flex-row flex-wrap align-center justify-center">
             <div class="d-flex flex-column align-center">
               <img
-                src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/svg%2FmyLogo-3.svg?alt=media&token=9f769a53-0fe3-4bc7-a29e-f73546bb5c51"
+                id="logo"
+                src=""
+                height="48px"
+                width="48px"
                 id="mylogo"
                 alt=""
               >
@@ -65,5 +68,22 @@
       </div>
     </footer>
   </div>
+  <script>
+    var down;
+    async function getJson () {
+      await fetch('https://cdn.statically.io/gh/blbsouza/cdn/main/json/web-app.json')
+        .then(j => j.json())
+        .then(r => {
+          document.getElementById('logo').src = r.myLogo
+          down = r.ramais.download
+        })
+    }
+
+    function opening () {
+      window.open(down)
+    }
+
+    getJson()
+  </script>
 </body>
 </html>
