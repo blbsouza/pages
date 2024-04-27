@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/svg%2Fleaf.svg?alt=media&token=8fc98a8c-7a27-4c67-a984-d5a9fdd7b4cd" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@3.5.17/dist/vuetify.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>PROLEAF</title>
+  <script type="text/javascript">
+    var linkClientes = "#";
+    var linkBatimento = "#";
+
+    async function getJson () {
+      await fetch('https://cdn.statically.io/gh/blbsouza/cdn/main/json/web-app.json')
+        .then(j => j.json())
+        .then(r => {
+          linkClientes = r?.proleaf?.clientes?.download
+          document.getElementById('clientesversion').innerHTML = r?.proleaf?.clientes?.version
+          linkBatimento = r?.proleaf?.batimento?.download
+          document.getElementById('mylogo').src = r?.myLogo
+          document.getElementById('batimentoversion').innerHTML = r?.proleaf?.batimento?.version
+        })
+        .catch(() => console.log('Não foi possível acessar o JSON'))
+    }
+
+    function downloadClientes () {
+      window.open(linkClientes)
+    }
+
+    function downloadBatimento () {
+      window.open(linkBatimento)
+    }
+
+    getJson()
+  </script>
+</head>
+<body>
+  <div class="div-load">
+    <div class="c-loader"></div>
+  </div>
+  <div class="main">
+    <section id="section1">
+      <header class="h-screen">
+        <div class="div-title d-flex flex-column align-center justify-center text-center h-screen">
+          <h1 class="text-h1 font-weight-bold">PROJETO PROLEAF</h1>
+          <p class="text-h4 text-color">Este projeto é um conjunto de páginas que visam facilitar o dia-a-dia, entregar desempenho e que focam no respeito ao meio ambiente.</p>
+          <img class="mt-2" src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/svg%2Fleaf.svg?alt=media&token=8fc98a8c-7a27-4c67-a984-d5a9fdd7b4cd" alt="" width="48px" height="48px">
+          <p class="pt-5 text-color">Veja a seguir o que preparamos para você</p>
+          <a href="#section2">
+            <span class="chevron1 mdi mdi-chevron-double-down"></span>
+          </a>
+        </div>
+        <div class="svg-header">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#7ED321" fill-opacity="1" d="M0,160L60,138.7C120,117,240,75,360,85.3C480,96,600,160,720,208C840,256,960,288,1080,272C1200,256,1320,192,1380,160L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+        </div>
+      </header>
+    </section>
+    <section id="section2">
+      <div class="div-clientes d-flex flex-row flex-nowrap align-center justify-center h-100">
+        <div class="div-img h-100">
+          <img
+            class="hero-media-image"
+            src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fclientes.PNG?alt=media&token=8d893cda-60fd-4734-876d-2608d59f1a55"
+            alt=""
+          >
+        </div>
+        <div class="div-text d-flex flex-column">
+          <h1 class="text-h1 text-white text-shadow">Clientes<span class="text-overline ml-3" id="clientesversion"></span></h1>
+          <p class="text-h4 text-white mt-4">Página que auxilia o televendas com a geração de tabelas com descrição do item, preço, quantidade e o código de barras.</p>
+          <button onclick="downloadClientes()" type="button" class="v-btn v-btn--elevated v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-outlined bg-white rounded-lg">Download</button>
+        </div>
+      </div>
+    </section>
+    <section id="section3">
+      <div class="div-batimento d-flex flex-row flex-nowrap align-center justify-center h-100">
+        <div class="div-text d-flex flex-column">
+          <h1 class="text-h1 text-color">Batimento<span class="text-overline ml-3" id="batimentoversion"></span></h1>
+          <p class="text-h4 text-color mt-4">Página que auxilia na impressão de páginas para encadernamento onde é feito o registro de quebras/sobras dos operadores.</p>
+          <button onclick="downloadBatimento()" type="button" class="v-btn v-btn--elevated v-theme--dark v-btn--density-default v-btn--size-default v-btn--variant-outlined bg-green-accent-3 rounded-lg">Download</button>
+        </div>
+        <div class="div-img2 h-100">
+          <img
+            class="hero-media-image2"
+            src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fbatimento.PNG?alt=media&token=e574fc48-bdb4-4648-90f3-6bf28cbc8a92"
+            alt=""
+          >
+        </div>
+      </div>
+    </section>
+    <div class="v-footer footer d-flex flex-md-row flex-sm-column pa-5 align-center justify-space-around bg-grey-lighten-3">
+      <div>
+        <img id="mylogo" src="" alt="" width="40px" height="40px">
+      </div>
+      <div class="d-flex flex-column text-sm-center text-md-left">
+        <p class="text-caption">blbtech &copy; All rights reserved</p>
+        <p class="text-caption">85 9 9989-6712</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    const e=document, n=e.body;
+    window.addEventListener("load", () => {
+      n.classList.add("is-loaded")
+      e.querySelector("html").style.overflow = "auto"
+    })
+  </script>
+</body>
+</html>
