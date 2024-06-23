@@ -1,0 +1,84 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden !important;
+}
+
+#app {
+    overflow-y: auto !important;
+    flex-flow: column;
+}
+
+#mid {
+    flex-grow: 1;
+}
+
+.is-loaded .div-load {
+    display: none
+}
+.div-load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.c-loader {
+    animation: 1s infinite is-rotating;
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: #311b92;
+    height: 50px;
+    width: 50px
+}
+
+.bg-color {
+    background-color: #311b92;
+}
+
+.card {
+    background-color: transparent !important;
+    background-image: linear-gradient(45deg, rgba(255,255,255,.02) 50%, rgba(255,255,255,.05) 50%) !important;
+}
+
+.card:hover {
+    background-image: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.1)) !important;
+}
+
+.mdi {
+    font-size: 80px;
+}
+
+#button {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+    color: #311b92;
+    font-size: larger;
+}
+
+/* @keyframes */
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn)
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .is-loaded .hero-media-image {
+        margin:1rem auto 0 2rem;
+        -webkit-transform:perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(.95) translatex(2%);transform:perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(.95) translatex(2%);
+        transition:.3s;
+        -webkit-animation: 1s cubic-bezier(.3,0,.2,1) .2s both fadeInLeftMedia;
+                animation: 1s cubic-bezier(.3,0,.2,1) .2s both fadeInLeftMedia;
+        will-change: transform;
+        opacity: 1;
+    }
+}
