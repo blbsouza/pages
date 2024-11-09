@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/svg%2Fprevperdas-logo.svg?alt=media&token=fa3fced4-17dd-4bb7-a7ce-3975948319e6" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css">-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta charset="utf-8">
+  <title>PREVPERDAS - Landing Page</title>
+</head>
+<body>
+  <div class="div-load">
+    <div class="c-loader"></div>
+  </div>
+  <div id="app">
+    <v-app class="w-100">
+      <v-main class="ma-0 pa-0 w-100">
+        <v-app-bar flat dense fixed color="transparent" id="app-bar">
+          <v-row class="d-flex justify-center justify-md-start">
+            <v-img contain class="a-fade" :src="json.prevperdas.logo" lazy-src="" max-height="35" max-width="35" alt=""></v-img>
+          </v-row>
+        </v-app-bar>
+
+        <v-col class="pa-0 ma-0">
+          <v-row class="h-100 blue darken-4 flex-column flex-sm-row">
+            <v-col class="d-sm-flex align-center justify-center pt-10 pa-sm-0 w-col-50">
+              <div class="d-sm-flex flex-column pt-10 w-70">
+                <h2 :class="`${classTitle} text-center text-md-left white--text mx-auto`">O poder de organizar tudo em um só lugar</h2>
+                <p :class="`${classpw} text-md-left text-center`">Conheça nosso sistema PrevPerdas. Com ele você tem mais controle, mais acessibilidade, mais gestão, mais economia.</p>
+              </div>
+            </v-col>
+            <v-col class="d-sm-flex align-center pa-0 w-col-50" id="col-1">
+              <v-row>
+                <div class="bubble bubble-1"></div>
+                <div class="bubble bubble-2"></div>
+                <v-img
+                  contain
+                  class="hero-media-image mx-auto"
+                  max-height="80%"
+                  max-width="80%"
+                  src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fimg-lp-1.png?alt=media&token=e0a0db40-2b95-4f13-b560-170c2343e71f"
+                ></v-img>
+              </v-row>
+            </v-col>
+          </v-row>
+          <div class="skew-1"></div>
+        </v-col>
+
+        <v-col class="pa-0">
+          <v-row class="justify-center w-60 mx-auto">
+            <h2 class="text-md-h1 text-h2 text-center font-weight-medium uped-t" id="gradient-title-1">PREVPERDAS</h2>
+            <p :class="`${classp} text-center uped-p`">O PrevPerdas está em sua versão {{ json?.prevperdas.version || 9 }} com várias melhorias desde a versão anterior. Criado para substituir as antiquadas planilhas de controle, este sistema cumpre bem o seu papel. Com ele é possível parar de preencher papeis manualmente e guardar seus dados de forma segura e organizada em um Banco de Dados interno. Dessa forma, se torna mais fácil o controle, pesquisa e acesso.</p>
+          </v-row>
+          <v-row class="justify-center my-md-10 mb-sm-2">
+            <v-img contain class="w-70" src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fimg-lp-2.png?alt=media&token=bd7899e5-89f9-4e29-82d6-f4c4a120837e"></v-img>
+          </v-row>
+        </v-col>
+
+        <hr :class="`${hr}`">
+
+        <v-col class="my-10 mx-0 pa-0">
+          <v-row class="justify-center my-10 w-col-50 mx-auto">
+            <v-row class="justify-center w-50 mx-auto">
+              <h2 :class="`${classTitle}`">Vantagens</h2>
+              <p :class="`${classp} text-center`">Nada de perder seu tempo criando planilhas, imprimindo folhas e enchendo a mesa com papel. O PrevPerdas tem várias telas que lhe ajudam a não passar sufoco.</p>
+            </v-row>
+          </v-row>
+
+          <v-col class="w-50 mx-auto" id="v-col">
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-an">An</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Anúncio de Veículos</h2>
+                  <p :class="`${classp} ${fPar}`">Guarda informações de carros anunciados pelo cadastro, ou situações adversas registradas pelo setor. É possível guardar informações como veículo, placa, motivo ou situação, quem era o segurança e atendente e a hora do ocorrido.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-ar">Ar</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Controle de Armários</h2>
+                  <p :class="`${classp} ${fPar}`">Com o design pensando na facilidade de visualização, aqui você pode ter um controle dos usuários de armários da filial. Marcar, desmarcar, quebrado ou vazio.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-ch">Ch</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Controle de Chaves</h2>
+                  <p :class="`${classp} ${fPar} mb-0`">Sabemos que o acesso as chaves é intenso. Para fazer o controle diário de entrega e devolução, é preciso uma quantidade enorme de papel, trazendo gastos para a unidade. Além disso, o controle fica travado no papel, quando precisa, por exemplo, achar quem estava com chave tal e se foi devolvida ou não. O controle de Chaves foi criado para solucionar estes problemas. Fácil de usar, é possível fazer a entrega e devolução com a matrícula do usuário e o número da chave. Pronto! Muito simples!</p>
+                  <p :class="`${classp} p-lh ml-5`">Ele também sinalizará se alguém não devolver a chave.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-cf">Cf</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Controle do Carro Forte</h2>
+                  <p :class="`${classp} ${fPar}`">Guarda informações da visita do carro forte na unidade. Placa, número, segurança, portaria, hora entrada e hora saída.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-sn">Sn</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Controle de Senha Noturna</h2>
+                  <p :class="`${classp} ${fPar}`">Registra as senhas noturnas entre portaria e móvel. Senha, Contra senha, vigilante, portaria e hora.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-cp">Cp</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Controle do Carro Pipa</h2>
+                  <p :class="`${classp} ${fPar}`">Guarda informações da visita do carro pipa na unidade. Placa, segurança, portaria, hora entrada e hora saída.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-re">Re</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Refeição de Externos</h2>
+                  <p :class="`${classp} ${fPar}`">Registra a visita de terceiros que se alimentam na unidade, como guardas municipais, policiais e etc.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-pn">Ec</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">AZ Estoque</h2>
+                  <p :class="`${classp} ${fPar}`">Ferramenta para contagem de estoque. Fiscal, físico, estoque e observação.</p>
+                </v-col>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row py-sm-5 feature">
+              <div class="d-flex justify-center my-sm-5 mb-1">
+                <div class="div-icon icon-sp">Sp</div>
+              </div>
+              <div>
+                <v-col class="pa-0">
+                  <h2 :class="`${fTitle}`">Senhas para PDV</h2>
+                  <p :class="`${classp} ${fPar}`">Exsitem situações onde precisamos conferir se tal cupom foi realmente em tal hora e se é da unidade. Pra isso existe o Senha PDV: guardar as mudanças de senha que ficam nos cupons.</p>
+                </v-col>
+              </div>
+            </div>
+
+          </v-col>
+          <hr :class="`${hr}`">
+        </v-col>
+
+        <v-col class="pa-0 pb-sm-5 ma-0">
+          <v-row class="w-100 h-50 ma-0 flex-column flex-sm-row">
+            <v-col class="d-flex align-center w-col-50" id="col-1">
+              <v-row class="h-50 left-image-row">
+                <img class="left-image" src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fimg-lp-3.png?alt=media&token=4689f91d-7523-4ef4-9364-3ed795609cca"/>
+              </v-row>
+            </v-col>
+            <v-col class="d-flex align-center justify-center pa-0 w-col-50">
+              <div class="d-flex flex-column w-70">
+                <h2 :class="`${classTitle} text-center`">Design Fácil</h2>
+                <p :class="`${classp} text-center`">Todas as cores não são por acaso. Isso torna o sistema mais compreensível e intuitivo.</p>
+              </div>
+            </v-col>
+          </v-row>
+        </v-col>
+
+        <v-col class="pa-0 ma-0">
+          <v-col class="pa-0 d-flex flex-column justify-end">
+            <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#1A237E" fill-opacity="1" d="M0,192L60,197.3C120,203,240,213,360,197.3C480,181,600,139,720,112C840,85,960,75,1080,90.7C1200,107,1320,149,1380,170.7L1440,192L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+            </svg>-->
+            <v-row class="ma-0">
+            <svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+              <path fill="#0D47A1" fill-opacity="1" d="M0,64L26.7,96C53.3,128,107,192,160,192C213.3,192,267,128,320,122.7C373.3,117,427,171,480,181.3C533.3,192,587,160,640,122.7C693.3,85,747,43,800,48C853.3,53,907,107,960,144C1013.3,181,1067,203,1120,197.3C1173.3,192,1227,160,1280,138.7C1333.3,117,1387,107,1413,101.3L1440,96L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path>
+            </svg>
+          </v-row>
+          </v-col>
+          <v-row class="h-50 flex-column flex-sm-row ma-0 blue darken-4 b">
+            <v-col class="d-flex align-center justify-center w-col-50">
+              <div class="d-flex flex-column w-70">
+                <h2 :class="`${classTitle} text-center white--text`">Deixe do seu jeito</h2>
+                <p :class="`${classpw} text-center`">Mais opções de aparência estão disponíveis para deixar o sistema único para você. Novos papéis de parede podem ser adicionados para todos entrando em contato com o desenvolvedor.</p>
+              </div>
+            </v-col>
+            <v-col class="d-sm-flex align-center w-col-50" id="col-1">
+              <v-row>
+                <v-img contain lazy-src="" class="hero-media-image mx-auto" id="img-op" src="https://firebasestorage.googleapis.com/v0/b/web-app-6280e.appspot.com/o/landing-page%2Fop-appearance.png?alt=media&token=fe3c72a9-29c3-4885-9e05-5931f622e21d"></v-img>
+              </v-row>
+            </v-col>
+          </v-row>
+          <div class="skew-1 w-100"></div>
+        </v-col>
+
+        <v-col class="d-flex flex-column align-center py-10 overflow-hidden" style="position: relative;">
+          <h2 :class="`${classTitle}`">Baixe já o seu</h2>
+          <p :class="`${classp}`">Disponível gratuitamente pelo Drive.</p>
+          <v-btn dark x-large class="blue darken-4 py-5 px-10 mx-10" @click="download">Baixar</v-btn>
+          <div class="div-right"></div>
+        </v-col>
+        
+        <v-footer dark padless class="ma-0">
+          <v-card tile flat class="blue darken-4 white--text text-center pt-5 px-0 w-100">
+            
+            <v-col class="d-sm-flex pa-0">
+              <v-col>
+                <v-row class="my-sm-5 align-center justify-center justify-sm-start" style="height: 45px;">
+                  <v-img class="ml-sm-5" lazy-src="" :src="json.myLogo" max-width="45px" max-height="45px"></v-img>
+                </v-row>
+              </v-col>
+              <v-col>
+                <v-row class="my-5 justify-center align-center" style="height: 45px;">
+                  <p class="mx-5 my-0 a-link" @click="contato" title="Perguntas, Dicas, Reclamações, Feedback...">Contato</p>
+                  <p class="mx-5 my-0 a-link" @click="help" title="Ajuda sobre instalação, etc...">Ajuda</p>
+                  <p class="mx-5 my-0 a-link" @click="amostra" title="Amostra online">Amostra</p>
+                  <v-img max-width="60" max-height="60" :src="`https://qrcode.tec-it.com/API/QRCode?data=${lin}`" lazy-src=""></v-img>
+                </v-row>
+              </v-col>
+            </v-col>
+
+            <v-divider></v-divider>
+      
+            <v-card-text class="white--text text-caption font-weight-light" style="font-family: 'Calibri Light', 'Consolas', monospace;">
+              {{ new Date().getFullYear() }} — &copy; blbTech, all rights reserved
+            </v-card-text>
+          </v-card>
+        </v-footer>
+
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data: () => ({
+        classTitle: "text-h4 text-md-h3 font-weight-medium",
+        classpw: "text-md-h6 text-body-1 font-weight-light white--text",
+        classp: "text-md-h6 text-body-1 font-weight-light grey--text text--darken-1 p-lh",
+        fTitle: "text-center text-sm-left text-h6 text-sm-h5 mt-n2 ml-sm-5 p-rel pb-2 pb-sm-4 feature-title",
+        fPar: "p-lh ml-sm-5 mt-sm-3 text-justify text-md-left",
+        hr: "grey lighten-2 w-80 mx-auto hr",
+        json: []
+      }),
+
+      methods: {
+        async pushJson() {
+          await fetch("https://cdn.statically.io/gh/blbsouza/cdn/main/json/web-app.json")
+          .then(j => j.json())
+          .then(r => this.json = r)
+          .catch(e => console.log(e))
+        },
+
+        download() {
+          window.open(this.dow)
+        },
+
+        contato() {
+          alert('Whatsapp: (85) 9 9989-6712');
+          alert('Email: blbsouza11@gmail.com');
+        },
+
+        help() {
+          window.open(this.hel)
+        },
+
+        amostra() {
+          window.open(this.amo)
+        }
+      },
+
+      computed: {
+        lin(){
+          return this.json?.prevperdas?.link
+        },
+        dow(){
+          return this.json?.prevperdas?.download
+        },
+        amo(){
+          return this.json?.prevperdas?.amostra
+        },
+        hel(){
+          return this.json?.prevperdas?.help
+        }
+      },
+
+      created(){
+        this.pushJson()
+      }
+    });
+
+    const e=document,
+    n=e.body,
+    s=window.sr=ScrollReveal({ reset: true });
+    window.addEventListener("load", () => {
+      n.classList.add("is-loaded"),
+      s.reveal(".uped-t", {
+        duration:500,
+        distance:"40px",
+        easing:"ease-out",
+        origin:"bottom",
+        viewFactor:.2
+      }),
+      s.reveal(".uped-p", {
+        duration:800,
+        distance:"40px",
+        easing:"ease-out",
+        origin:"bottom",
+        viewFactor:.2
+      });
+      ScrollReveal({ reset: false }).reveal(".feature", {
+        duration:1000,
+        distance:"100px",
+        easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",
+        origin:"right",
+        viewFactor:2
+      });
+    })
+  </script>
+</body>
+</html>
